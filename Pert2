@@ -1,0 +1,50 @@
+--2--
+ALTER DATABASE Shop_NPM 
+MODIFY NAME = MeccaShop_NPM;
+
+--3--
+CREATE TABLE Pesanan (
+    Kode_Pesanan VARCHAR(4) NOT NULL,
+	Nama_Pesanan VARCHAR(100) NOT NULL,
+    Kode_Barang VARCHAR(4),
+    PRIMARY KEY (Kode_Pesanan),
+    CONSTRAINT fk_pesanan_barang FOREIGN KEY (Kode_Barang)
+    REFERENCES Barang(Kode_Barang)
+);
+
+--melihat struktur objek (tabel) yang dibuat
+EXEC sp_columns Pesanan;
+
+INSERT INTO Pesanan 
+VALUES
+	('P001', 'Dina', '0001'),
+	('P002', 'Inaya', '0003'),
+	('P003', 'Kaina', '0001');
+
+--Menampilkan data yang baru dimasukkan
+SELECT * FROM Pesanan;
+
+
+--4
+ALTER TABLE Pesanan ADD Alamat VARCHAR(100);
+--melihat struktur objek (tabel) yang dibuat
+EXEC sp_columns Pesanan;
+
+INSERT INTO Pesanan
+VALUES 
+	('P004', 'Noora', '0001', 'Jakarta'),
+	('P005', 'Naufal', '0003', 'Depok'),
+	('P006', 'Nuha', '0001', 'Bekasi');
+
+SELECT * FROM Pesanan;
+
+--6
+DROP TABLE Barang; --> pasti error karena masih ada foreign key yang nyangkut
+ALTER TABLE Pesanan DROP CONSTRAINT fk_pesanan_barang;
+
+--ALTER TABLE Pesanan ADD FOREIGN KEY (fk_pesanan_barang) REFERENCES Barang(Kode_Barang);
+
+
+--7
+USE master;
+DROP DATABASE MeccaShop_NPM;
