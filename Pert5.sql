@@ -19,6 +19,8 @@ SELECT * FROM sys.sql_logins;
 
 --CEK ROLE
 SELECT * FROM sys.database_principals;
+
+
 --2
 CREATE LOGIN Staff_NPM
 WITH PASSWORD = 'Staff123',
@@ -34,14 +36,17 @@ CHECK_POLICY = OFF;
 
 ALTER LOGIN Staff_NPM ENABLE;
 
+
 --3
 CREATE USER Staff FOR LOGIN Staff_NPM;
 CREATE USER Asisten FOR LOGIN Asisten_NPM;
 CREATE USER Praktikan FOR LOGIN Praktikan_NPM;
 
+
 --4
 CREATE ROLE Staff_Role;
 ALTER ROLE Staff_Role ADD MEMBER Staff;
+
 
 --5
 GRANT CREATE TABLE TO Staff_Role;
@@ -49,12 +54,13 @@ GRANT ALTER, SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo TO Staff_Role;
 
 --ATAU--
 
+--Sudah Mencakup CREATE, ALTER, SELECT, INSERT, UPDATE, DELETE--
 GRANT CONTROL ON SCHEMA::dbo TO Staff_Role;
 
---Sudah Mencakup CREATE, ALTER, SELECT, INSERT, UPDATE, DELETE--
 
 --6
 GRANT SELECT ON SCHEMA::dbo TO Praktikan;
+
 
 --7
 --LOGIN SEBAGAI STAFF
