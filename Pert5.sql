@@ -22,7 +22,8 @@ SELECT * FROM sys.database_principals;
 
 
 --2
-CREATE LOGIN Staff_NPM WITH PASSWORD = 'Staff123',
+CREATE LOGIN Staff_NPM 
+WITH PASSWORD = 'Staff123',
 CHECK_POLICY = OFF;
 
 CREATE LOGIN Asisten_NPM
