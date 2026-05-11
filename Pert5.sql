@@ -12,7 +12,7 @@ ALTER ROLE Staff_Role DROP MEMBER Staff;
 DROP ROLE Staff_Role;
 
 --Kalau masih error karena role punya permission, revoke dulu:
-Kalau masih error karena role punya permission, revoke dulu:
+REVOKE CONTROL ON SCHEMA::dbo FROM Staff_Role;
 
 --CEK LOGIN
 SELECT * FROM sys.sql_logins;
