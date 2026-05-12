@@ -34,19 +34,29 @@ CREATE LOGIN Praktikan_NPM
 WITH PASSWORD = 'Praktikan123',
 CHECK_POLICY = OFF;
 
+--CEK LOGIN
+SELECT * FROM sys.sql_logins;
+
 ALTER LOGIN Staff_NPM ENABLE;
 
 
 --3
+
+--kalau misal login No 2 tidak ada yang double
+SELECT * FROM sys.database_principals;
+
 CREATE USER Staff FOR LOGIN Staff_NPM;
 CREATE USER Asisten FOR LOGIN Asisten_NPM;
 CREATE USER Praktikan FOR LOGIN Praktikan_NPM;
 
+SELECT * FROM sys.database_principals;
 
 --4
 CREATE ROLE Staff_Role;
 ALTER ROLE Staff_Role ADD MEMBER Staff;
 
+--JIka ADD MEMBER Tidak Bisa Pakai INI
+EXEC sp_addrolemember 'Staff_Role', 'Staff';
 
 --5
 GRANT CREATE TABLE TO Staff_Role;
