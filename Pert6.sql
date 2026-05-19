@@ -37,23 +37,15 @@ CREATE TABLE Mahasiswa (
 );
 
 --c
-EXEC TambahData @npm = '10121873', @nama = 'Muhammad Nasir', @kelas = '4KA15', @jurusan = 'Sistem Informasi';
-EXEC TambahData @npm = '10122448', @nama = 'Fahar Ahnaf Aziz', @kelas = '3KA11', @jurusan = 'Sistem Informasi';
-EXEC TambahData @npm = '10120677', @nama = 'Muhamad Risqi Khasani', @kelas = '4KA10', @jurusan = 'Sistem Informasi';
-EXEC TambahData @npm = '51421116', @nama = 'Najya Anara Parinsi', @kelas = '4IA12', @jurusan = 'Teknik Informatika';
-EXEC TambahData @npm = '50420230', @nama = 'Ariq Syahzidan', @kelas = '4IA09', @jurusan = 'Teknik Informatika';
-EXEC TambahData @npm = '31122077', @nama = 'Netania Indria Wihastuti', @kelas = '3DB01', @jurusan = 'Manajemen Informatika';
-EXEC TambahData @npm = '51422424', @nama = 'Reza Bayu Putra Manik', @kelas = '3IA20', @jurusan = 'Teknik Informatika';
-EXEC TambahData @npm = '11122008', @nama = 'Muhammad Varrel Nuwi Zulyanno', @kelas = '3KA04', @jurusan = 'Sistem Informasi';
-EXEC TambahData @npm = '10121295', @nama = 'Daffa Alfahryan Syuja Syaehu', @kelas = '4KA15', @jurusan = 'Sistem Informasi';
-EXEC TambahData @npm = '10120372', @nama = 'Fadillah Achmad Siregar', @kelas = '4KA02', @jurusan = 'Sistem Informasi';
+EXEC TambahData @npm = '30121453', @nama = 'Farras Rasendriya', @kelas = '4ID01', @jurusan = 'Teknik Industri';
+
 
 --d
 SELECT * FROM Mahasiswa;
 
 
 --3
-CREATE CLUSTERED INDEX IDX_Mahasiswa_Nama
+CREATE CLUSTERED INDEX IDX_Mahasiswa_Farras
 ON Mahasiswa (Nama);
 EXEC sp_helpindex 'Mahasiswa';
 
@@ -70,19 +62,20 @@ ALTER TABLE mahasiswa
 DROP CONSTRAINT PK__Mahasisw__DF90E5C9396865DF;
 
 --kita buat lagi clustered index nya
-CREATE CLUSTERED INDEX IDX_Mahasiswa_Nama
+CREATE CLUSTERED INDEX IDX_Mahasiswa_Farras
 ON Mahasiswa (Nama);
 --terus kita cek lagi udah ada atau engga si index nya
 EXEC sp_helpindex 'Mahasiswa';
 
-
+--kalau Hapus index
+DROP INDEX IDX_Mahasiswa_Farras
 --4
-CREATE NONCLUSTERED INDEX IDX_Mahasiswa_Jurusan
+CREATE NONCLUSTERED INDEX IDX_Mahasiswa_TeknikIndustri
 ON Mahasiswa (JURUSAN);
 EXEC sp_helpindex 'Mahasiswa';
 
 
-
+--gausah dipakai yang dibawah ini
 --Query Tambahan (FYI)
 CREATE TABLE Mahasiswa (
     NPM VARCHAR(8) PRIMARY KEY,
