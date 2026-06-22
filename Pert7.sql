@@ -40,7 +40,9 @@ CREATE TABLE MAHASISWA (
 
 
 --5
-Object Explorer > Databases > Pert7_NPM > Task(Klik kanan Pert7_NPM) > Back up...
+Object Explorer > Databases > Pert7_NPM > Task(Klik kanan Pert7_NPM) > Back up...(Langusng Di Ok-in aja)
+
+
 
 
 
