@@ -44,14 +44,15 @@ Object Explorer > Databases > Pert7_NPM > Task(Klik kanan Pert7_NPM) > Back up..
 
 'Kalau gagal'
 BACKUP DATABASE Pert7_NPM
-TO DISK = C:\Program Files (x86)\Microsoft SQL Server\MSSQL10_50.LEPKOMF4112\MSSQL\Backup\Pert7_NPM.bak
+TO DISK = 'C:\Program Files (x86)\Microsoft SQL Server\MSSQL10_50.LEPKOMF4112\MSSQL\Backup\Pert7_NPM.bak';
 
 --6
 DROP TABLE MAHASISWA;
 Use Master;
 
-
-
+'Kalau gagal'
+RESTORE DATABASE Pert7_NPM
+FROM DISK = 'C:\Program Files (x86)\Microsoft SQL Server\MSSQL10_50.LEPKOMF4112\MSSQL\Backup\Pert7_NPM.bak';
 
 
 
