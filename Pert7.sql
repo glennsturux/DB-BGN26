@@ -42,6 +42,13 @@ CREATE TABLE MAHASISWA (
 --5
 Object Explorer > Databases > Pert7_NPM > Task(Klik kanan Pert7_NPM) > Back up...(Langusng Di Ok-in aja)
 
+'Kalau gagal'
+BACKUP DATABASE Pert7_NPM
+TO DISK = C:\Program Files (x86)\Microsoft SQL Server\MSSQL10_50.LEPKOMF4112\MSSQL\Backup\Pert7_NPM.bak
+
+--6
+DROP TABLE MAHASISWA;
+Use Master;
 
 
 
