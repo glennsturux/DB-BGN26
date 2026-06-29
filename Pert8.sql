@@ -101,7 +101,7 @@ FROM SYS.TRIGGERS
 --3a
 INSERT INTO Sales (Sale_id, Product_id, Quantity, Sale_Date)
 VALUES (1, 101, 15, GETDATE());
-
+--Pasti Kurang Stok
 SELECT * FROM product;
 SELECT * FROM Sales;
 
@@ -109,7 +109,7 @@ SELECT * FROM Sales;
 --3b
 INSERT INTO Sales (Sale_id, Product_id, Quantity, Sale_Date)
 VALUES (2, 103, 10, '2024-12-01');
-
+--Pasti Kurang Stok
 SELECT * FROM product;
 SELECT * FROM Sales;
 
