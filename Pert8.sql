@@ -93,6 +93,11 @@ BEGIN
     END
 END;
 
+--Untuk Melihat Trigger Yang Sudah Dibuat
+SELECT NAME
+FROM SYS.TRIGGERS
+	
+
 --3a
 INSERT INTO Sales (Sale_id, Product_id, Quantity, Sale_Date)
 VALUES (1, 101, 15, GETDATE());
